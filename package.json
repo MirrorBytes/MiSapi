@@ -1,0 +1,19 @@
+{
+  "name": "MinimalSafeAPI",
+  "version": "1.0.0",
+  "description": "Minimalistic secure API.",
+  "main": "index.js",
+  "author": "Koller",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.16.1",
+    "compression": "^1.6.2",
+    "express": "^4.14.1",
+    "helmet": "^3.4.0",
+    "jwt-simple": "^0.5.1",
+    "morgan": "^1.8.1",
+    "require-directory": "^2.1.1",
+    "winston": "^2.3.1"
+  }
+}
