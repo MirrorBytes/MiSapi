@@ -1,5 +1,6 @@
 'use strict';
-var express = require('express'),
+var Promise = require('bluebird'),
+    express = require('express'),
     path = require('path'),
     app = express();
 

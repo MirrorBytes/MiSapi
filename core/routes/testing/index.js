@@ -1,18 +1,23 @@
 'use strict';
+var get = require('./lib/get'),
+    create = require('./lib/create'),
+    update = require('./lib/update'),
+    remove = require('./lib/remove');
+
 module.exports = {
   getAll: function(req, res) {
-    console.log('testing - getAll');
+    get.All();
   },
   getOne: function(req, res) {
-    console.log('testing - getOne');
+    get.One();
   },
   create: function(req, res) {
-    console.log('testing - create');
+    create();
   },
   update: function(req, res) {
-    console.log('testing - update');
+    update();
   },
   remove: function(req, res) {
-    console.log('testing - remove');
+    remove();
   }
 };

@@ -1,6 +1,4 @@
 'use strict';
-var Promise = require('bluebird');
-
 var core = require('./core/'),
     logger = require('./core/utils/logger');
 

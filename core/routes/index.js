@@ -35,7 +35,7 @@ function assembleRoute(routes, routesKeys, fullRoute) {
           .delete(obj.remove);
 
         fullRoute = '';
-      } else {
+      } else if(curRouteKeys[keysLength] !== 'lib') {
         var nextRoutes = routes[curRoute][curRouteKeys[keysLength]];
         assembleRoute(
           { [curRouteKeys[keysLength]]: nextRoutes },
