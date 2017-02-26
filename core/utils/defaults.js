@@ -9,7 +9,7 @@ module.exports = {
         styleSrc: ["'self'"],
         fontSrc: ["'self'"],
         imgSrc: ["'self'", 'data:'],
-        objectSrc: [],
+        objectSrc: ["'none'"],
         reportUri: '/report-violation',
         upgradeInsecureRequests: true
       },
