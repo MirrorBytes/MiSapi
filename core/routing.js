@@ -2,9 +2,7 @@
 var router = require('express').Router(),
     requireDirectory = require('require-directory');
 
-var logger = require('../utils/logger');
-
-// TODO: create a standard for API routes
+var logger = require('./utils/logger');
 
 function assembleRoute(routes, routesKeys, fullRoute) {
   var curRoute;
@@ -47,8 +45,8 @@ function assembleRoute(routes, routesKeys, fullRoute) {
   }
 }
 
-module.exports = function(app) {
-  var routes = requireDirectory(module),
+module.exports = function(app, directory) {
+  var routes = requireDirectory(module, directory),
       routesKeys = Object.keys(routes);
 
   assembleRoute(routes, routesKeys);

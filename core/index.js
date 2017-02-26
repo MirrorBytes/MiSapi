@@ -6,7 +6,7 @@ var Promise = require('bluebird'),
 
 var configure = require('./utils/configuration'),
     logger = require('./utils/logger'),
-    routing = require('./routes/'),
+    routing = require('./routing'),
     server = require('./build');
 
 module.exports = function(options) {
@@ -24,7 +24,7 @@ module.exports = function(options) {
         res.status(204).end();
       });
 
-      routing(app);
+      routing(app, options.routes || path.resolve(__dirname, 'routes/'));
     } catch(e) {
       reject(e);
     } finally {
