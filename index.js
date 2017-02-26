@@ -3,7 +3,7 @@ var core = require('./core/'),
     logger = require('./core/utils/logger');
 
 core({
-  port: 3000
+  // options go here: port and security
 }).then(function(server) {
   if(server.constructor !== Error) {
     server.start();
