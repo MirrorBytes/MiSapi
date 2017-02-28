@@ -6,18 +6,18 @@ var get = require('./lib/get'),
 
 module.exports = {
   getAll: function(req, res) {
-    get.All();
+    get.All(req, res);
   },
   getOne: function(req, res) {
-    get.One();
+    get.One(req, res);
   },
   create: function(req, res) {
-    create();
+    create(req, res);
   },
   update: function(req, res) {
-    update();
+    update(req, res);
   },
   remove: function(req, res) {
-    remove();
+    remove(req, res);
   }
 };

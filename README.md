@@ -14,3 +14,18 @@ npm install --production
 ```
 yarn install --production
 ```
+Third, make sure you have mongo installed (you may have to do some Google searches) and running:
+```
+mongod
+```
+Finally, run MiSapi:
+```
+node .
+```
+---
+
+#TODO:
+- Write cli script for easy installation, manipulation, and standardization.
+  - Make sure it's user friendly, and simple.
+  - Swap cluster.js out for node-webworker-threads on all database requests.
+- Optimize modules, using explicit path resolution.

@@ -5,8 +5,13 @@ var core = require('./core/'),
     logger = require('./core/utils/logger');
 
 core({
-  // options go here: port and security
-  routes: path.resolve(__dirname, 'routes/')
+  /**
+   * Possible options:
+   * - port
+   * - security
+   * - routes
+   * - mongoURI
+   */
 }).then(function(server) {
   if(server.constructor !== Error) {
     server.start();

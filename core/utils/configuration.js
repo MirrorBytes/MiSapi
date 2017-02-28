@@ -1,7 +1,9 @@
 'use strict';
-var bodyParser = require('body-parser'),
-    compression = require('compression'),
+var Promise = require('bluebird'),
     helmet = require('helmet'),
+    bodyParser = require('body-parser'),
+    compression = require('compression'),
+    mongoose = require('mongoose'),
     morgan = require('morgan');
 
 var logger = require('./logger'),
@@ -21,7 +23,20 @@ module.exports = function(app, options) {
   logger.debug('Enabling GZip Compression');
 	app.use(compression());
 
+  mongoose.Promise = Promise;
+  mongoose.connect(options.mongoURI || 'mongodb://localhost:27017');
+
   app.use(morgan('combined', {
     'stream': logger.stream
   }));
+
+  app.post(defaults['security']['contentSecurityPolicy']['directives'].reportUri, function(req, res) {
+    if(req.body) {
+      logger.error('CSP Violation: ', req.body);
+    } else {
+      logger.error('CSP Violation: No data received!');
+    }
+
+    res.status(204).end();
+  });
 };
